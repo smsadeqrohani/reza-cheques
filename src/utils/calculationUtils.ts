@@ -71,7 +71,6 @@ export const calculateInstallments = (
   // Calculate installments with original amount for internal calculations
   const installments: InstallmentRow[] = [];
   let remainingBalance = principalAmount;
-  let totalInterest = 0;
   let totalRoundedInstallments = 0;
 
   for (let i = 1; i <= numberOfInstallments; i++) {
@@ -98,7 +97,7 @@ export const calculateInstallments = (
       remainingBalance
     });
     
-    totalInterest += interestAmount;
+
   }
 
   // Calculate total interest based on rounded installments

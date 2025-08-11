@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PersianDatePicker } from './components/PersianDatePicker';
-import { calculateInstallments, formatCurrency, formatPercentage, CalculationResult, roundToNearestHundredThousand } from './utils/calculationUtils';
+import { calculateInstallments, formatCurrency, CalculationResult } from './utils/calculationUtils';
 import { getCurrentJalaliDate, formatJalaliDate, getInstallmentDate, parseJalaliDate, isValidJalaliDate, formatJalaliDateWithPersianNumbers } from './utils/dateUtils';
-import dayjs from 'dayjs';
 
 interface FormData {
   invoiceNumber: string;
@@ -70,7 +69,7 @@ const App: React.FC = () => {
         invoiceDate: formatJalaliDate(getCurrentJalaliDate())
       }));
     }
-  }, []);
+  }, [formData.invoiceDate]);
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};

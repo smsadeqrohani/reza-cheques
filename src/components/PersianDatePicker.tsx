@@ -17,7 +17,7 @@ export const PersianDatePicker: React.FC<PersianDatePickerProps> = ({
   label,
   placeholder = 'انتخاب تاریخ'
 }) => {
-  const handleDateChange = (dateObject: any) => {
+  const handleDateChange = (dateObject: DateObject | null) => {
     console.log('DatePicker onChange:', dateObject);
     if (dateObject) {
       // Format as YYYY/MM/DD for internal storage
@@ -54,26 +54,7 @@ export const PersianDatePicker: React.FC<PersianDatePickerProps> = ({
     return result;
   };
 
-  // Format date for display in Persian
-  const formatDisplayDate = (dateString: string): string => {
-    if (!dateString) return '';
-    
-    const parts = dateString.split('/');
-    if (parts.length !== 3) return '';
-    
-    const year = parseInt(parts[0]);
-    const month = parseInt(parts[1]);
-    const day = parseInt(parts[2]);
-    
-    if (isNaN(year) || isNaN(month) || isNaN(day)) return '';
-    
-    // Convert to Persian numerals and format
-    const persianYear = year.toLocaleString('fa-IR');
-    const persianMonth = month.toLocaleString('fa-IR').padStart(2, '۰');
-    const persianDay = day.toLocaleString('fa-IR').padStart(2, '۰');
-    
-    return `${persianYear}/${persianMonth}/${persianDay}`;
-  };
+
 
   return (
     <div className="relative">
