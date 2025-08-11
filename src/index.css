@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  
+  body {
+    font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent placeholder-gray-500 dark:placeholder-gray-400;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700;
+  }
+}
+
+/* Persian Date Picker Styles */
+.rmdp-container {
+  font-family: 'Vazirmatn', Tahoma, Arial, sans-serif !important;
+}
+
+.rmdp-calendar {
+  background-color: white !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.dark .rmdp-calendar {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: white !important;
+}
+
+.rmdp-header {
+  background-color: #f3f4f6 !important;
+  border-bottom: 1px solid #d1d5db !important;
+}
+
+.dark .rmdp-header {
+  background-color: #374151 !important;
+  border-bottom-color: #4b5563 !important;
+}
+
+.rmdp-day {
+  color: #374151 !important;
+  background-color: transparent !important;
+}
+
+.dark .rmdp-day {
+  color: #d1d5db !important;
+  background-color: transparent !important;
+}
+
+.rmdp-day:hover {
+  background-color: #e5e7eb !important;
+}
+
+.dark .rmdp-day:hover {
+  background-color: #4b5563 !important;
+}
+
+.rmdp-day.rmdp-selected {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.dark .rmdp-day.rmdp-selected {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.rmdp-day.rmdp-today {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+.dark .rmdp-day.rmdp-today {
+  background-color: #1e3a8a !important;
+  color: #dbeafe !important;
+}
+
+.rmdp-day.rmdp-disabled {
+  color: #9ca3af !important;
+}
+
+.dark .rmdp-day.rmdp-disabled {
+  color: #6b7280 !important;
+}
+
+.rmdp-week-day {
+  color: #6b7280 !important;
+  font-weight: 600 !important;
+}
+
+.dark .rmdp-week-day {
+  color: #9ca3af !important;
+}
+
+.rmdp-arrow {
+  border-color: #6b7280 !important;
+}
+
+.dark .rmdp-arrow {
+  border-color: #9ca3af !important;
+}
+
+.rmdp-arrow-container:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.dark .rmdp-arrow-container:hover {
+  background-color: #4b5563 !important;
+}
+
+/* Input field dark mode - Fix for date picker input */
+.dark .rmdp-input {
+  background-color: #374151 !important;
+  border-color: #4b5563 !important;
+  color: white !important;
+}
+
+.dark .rmdp-input::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Override the inline styles for dark mode */
+.dark .rmdp-container .rmdp-input {
+  background-color: #374151 !important;
+  border-color: #4b5563 !important;
+  color: white !important;
+}
+
+/* Month and year picker dark mode */
+.rmdp-panel {
+  background-color: white !important;
+}
+
+.dark .rmdp-panel {
+  background-color: #1f2937 !important;
+  color: white !important;
+}
+
+.rmdp-panel-header {
+  background-color: #f3f4f6 !important;
+}
+
+.dark .rmdp-panel-header {
+  background-color: #374151 !important;
+}
+
+.rmdp-panel-item {
+  color: #374151 !important;
+}
+
+.dark .rmdp-panel-item {
+  color: #d1d5db !important;
+}
+
+.rmdp-panel-item:hover {
+  background-color: #e5e7eb !important;
+}
+
+.dark .rmdp-panel-item:hover {
+  background-color: #4b5563 !important;
+}
+
+.rmdp-panel-item.rmdp-selected {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+/* Fix for any remaining black text in dark mode */
+.dark * {
+  color-scheme: dark;
+}
+
+.dark .text-gray-900 {
+  color: #f9fafb !important;
+}
+
+.dark .text-gray-800 {
+  color: #f3f4f6 !important;
+}
+
+.dark .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    background: white !important;
+  }
+  
+  table {
+    border-collapse: collapse !important;
+  }
+  
+  th, td {
+    border: 1px solid #ccc !important;
+    padding: 8px !important;
+  }
+  
+  th {
+    background-color: #f5f5f5 !important;
+  }
+}
