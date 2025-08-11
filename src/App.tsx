@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PersianDatePicker } from './components/PersianDatePicker';
 import { calculateInstallments, formatCurrency, CalculationResult } from './utils/calculationUtils';
 import { getCurrentJalaliDate, formatJalaliDate, getInstallmentDate, parseJalaliDate, isValidJalaliDate, formatJalaliDateWithPersianNumbers } from './utils/dateUtils';
+import logoImage from './LOGO.png';
 
 interface FormData {
   invoiceNumber: string;
@@ -402,7 +403,7 @@ const App: React.FC = () => {
             <div className="card mb-6">
                              <div className="print-only mb-6 text-center">
                  <div className="flex items-center justify-center mb-4">
-                   <img src="/LOGO.png" alt="تیمچه فرش" className="h-24 w-auto" />
+                   <img src={logoImage} alt="تیمچه فرش" className="h-24 w-auto" />
                  </div>
                  <div className="border-t border-gray-300 pt-4">
                    <p className="text-gray-600">تاریخ چاپ: {formatJalaliDateWithPersianNumbers(formatJalaliDate(getCurrentJalaliDate()))}</p>
