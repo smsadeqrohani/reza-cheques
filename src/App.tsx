@@ -86,7 +86,7 @@ const App: React.FC = () => {
     }
 
     if (!formData.customerName.trim()) {
-      newErrors.customerName = 'نام مشتری الزامی است';
+      newErrors.customerName = 'نام خریدار الزامی است';
     }
 
     if (formData.totalAmount <= 0) {
@@ -258,14 +258,14 @@ const App: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  نام مشتری
+                  نام خریدار
                 </label>
                 <input
                   type="text"
                   value={formData.customerName}
                   onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
                   className="input-field"
-                  placeholder="نام کامل مشتری"
+                  placeholder="نام کامل خریدار"
                 />
                 {errors.customerName && (
                   <p className="text-red-500 text-sm mt-1">{errors.customerName}</p>
@@ -421,7 +421,7 @@ const App: React.FC = () => {
                     <span className="font-medium text-gray-900 dark:text-white">{toPersianNumbers(calculationResult.summary.invoiceNumber)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-300">نام مشتری:</span>
+                    <span className="text-gray-600 dark:text-gray-300">نام خریدار:</span>
                     <span className="font-medium text-gray-900 dark:text-white">{calculationResult.summary.customerName}</span>
                   </div>
                   <div className="flex justify-between">
